@@ -2,7 +2,8 @@
 
 erDiagram
 
-USERS }o--o{ LOGIN : allow
+USERS ||--o{ ROLE : allow
+USERS }o--|| SESSION : allow
 USERS{
   int id PK
   string email
@@ -10,20 +11,15 @@ USERS{
   date created_at
 }
 
-LOGIN }o--|| SESSION : allow
-LOGIN{
+ROLE{
   int id PK
-  int user_id FK
-  date attempt_time
-  boolean status
+  string name
 }
 
-SESSION }o--o{ USERS : allow
 SESSION{
   int id PK
   int user_id FK
   string token
-  int login_id FK
 }
 
 ```

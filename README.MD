@@ -3,7 +3,7 @@
 erDiagram
 
 USERS ||--o{ ROLES : allow
-USERS }o--|| SESSION : allow
+USERS }o--|| SESSIONS : allow
 USERS{
   int id PK
   string email
@@ -17,7 +17,7 @@ ROLES{
   string name
 }
 
-SESSION{
+SESSIONS{
   int id PK
   int user_id FK
   string token

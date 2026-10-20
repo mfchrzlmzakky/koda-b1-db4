@@ -2,17 +2,17 @@
 
 erDiagram
 
-USERS ||--o{ ROLE : allow
+USERS ||--o{ ROLES : allow
 USERS }o--|| SESSION : allow
 USERS{
   int id PK
   string email
   string password
-  int user_id FK
+  int roles_id FK
   date created_at
 }
 
-ROLE{
+ROLES{
   int id PK
   string name
 }

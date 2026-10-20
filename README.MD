@@ -8,6 +8,7 @@ USERS{
   int id PK
   string email
   string password
+  int user_id FK
   date created_at
 }
 

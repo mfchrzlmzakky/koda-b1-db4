@@ -2,8 +2,8 @@
 
 erDiagram
 
-USER }o--o{ LOGIN : allow
-USER{
+USERS }o--o{ LOGIN : allow
+USERS{
   int id PK
   string email
   string password
@@ -18,7 +18,7 @@ LOGIN{
   boolean status
 }
 
-SESSION }o--o{ USER : allow
+SESSION }o--o{ USERS : allow
 SESSION{
   int id PK
   int user_id FK
